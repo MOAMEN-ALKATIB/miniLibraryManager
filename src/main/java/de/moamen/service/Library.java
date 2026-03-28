@@ -1,12 +1,16 @@
 package de.moamen.service;
 
+import de.moamen.database.BookToDatabaseConnector;
+import de.moamen.database.BookToDatabaseConnectorImpl;
 import de.moamen.model.Book;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    private final List<Book> bookList;
+    private List<Book> bookList;
+    private static final BookToDatabaseConnector bookToDatabaseConnector=new BookToDatabaseConnectorImpl();
+
 
     public Library(){
         this.bookList=new ArrayList<>();
@@ -57,7 +61,22 @@ public class Library {
         }
     }
 
+    public void saveInDatabase(){
+        for (Book b :
+                bookList) {
+            bookToDatabaseConnector.saveBook(b);
+        }
+    }
+
+    public void loadFromDatabase(){
+        bookList=bookToDatabaseConnector.loadBook();
+    }
+
     public List<Book> getBookList() {
         return bookList;
+    }
+
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
     }
 }

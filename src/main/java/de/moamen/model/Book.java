@@ -3,14 +3,13 @@ package de.moamen.model;
 import java.util.Objects;
 
 public class Book implements Comparable<Book>{
-    private static int counter=0;
     private int isbn;
     private String title;
     private int year;
     private Author author;
 
-    public Book(String title, int year,Author author){
-        this.isbn =counter++;
+    public Book(int isbn,String title, int year,Author author){
+        this.isbn=isbn;
         this.title=title;
         this.year=year;
         this.author=author;
