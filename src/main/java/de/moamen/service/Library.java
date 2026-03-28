@@ -5,42 +5,56 @@ import de.moamen.model.Book;
 import java.util.ArrayList;
 import java.util.List;
 
-public class library {
+public class Library {
     private final List<Book> bookList;
 
-    public library(){
+    public Library(){
         this.bookList=new ArrayList<>();
     }
 
     public void addBook(Book book){
-        if (!checkIfExist(book.getId())){
+        if (!checkIfExist(book.getIsbn())){
             bookList.add(book);
         }else {
             System.out.println("Book is already in the library");
         }
 
     }
-    public void deleteBook(int id){
-        Book book=findBook(id);
+    public void deleteBook(int isbn){
+        Book book=findBook(isbn);
         if (book!=null){
             bookList.remove(book);
         }else{
-            System.out.println("there is no book with the given id");
+            System.out.println("there is no book with the given isbn");
         }
     }
 
-    private boolean checkIfExist(int id){
-        return bookList.stream().anyMatch(book -> id==book.getId());
+    private boolean checkIfExist(int isbn){
+        return bookList.stream().anyMatch(book -> isbn==book.getIsbn());
     }
-    public Book findBook(int id){
+    public Book findBook(int isbn){
         for (Book book:bookList){
-            if (book.getId()==id)
+            if (book.getIsbn()==isbn)
                 return book;
         }
         return null;
     }
     public Book findBook(String title) {
        return bookList.stream().filter(book -> book.getTitle()!=null && title.equalsIgnoreCase(book.getTitle())).findFirst().orElse(null);
+    }
+
+    public void displayAuthorBooks(String authorName){
+        for (Book book:bookList){
+            if (book.getAuthor().getName().equalsIgnoreCase(authorName)){
+                System.out.println(book);
+            }
+        }
+    }
+
+    public void displayALlBooks(){
+        for (Book book:bookList){
+            System.out.println(book);
+        }
     }
 
     public List<Book> getBookList() {

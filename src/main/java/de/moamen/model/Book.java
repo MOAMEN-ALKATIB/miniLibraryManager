@@ -2,26 +2,26 @@ package de.moamen.model;
 
 import java.util.Objects;
 
-public class Book implements Comparable{
+public class Book implements Comparable<Book>{
     private static int counter=0;
-    private int id;
+    private int isbn;
     private String title;
     private int year;
     private Author author;
 
     public Book(String title, int year,Author author){
-        this.id=counter++;
+        this.isbn =counter++;
         this.title=title;
         this.year=year;
         this.author=author;
     }
 
-    public int getId() {
-        return id;
+    public int getIsbn() {
+        return isbn;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIsbn(int isbn) {
+        this.isbn = isbn;
     }
 
     public String getTitle() {
@@ -51,7 +51,7 @@ public class Book implements Comparable{
     @Override
     public String toString() {
         return "Book{" +
-                "id=" + id +
+                "isbn=" + isbn +
                 ", title='" + title + '\'' +
                 ", year=" + year +
                 ", author=" + author +
@@ -62,18 +62,16 @@ public class Book implements Comparable{
     public boolean equals(Object object){
         if (this==object) return true;
         if (!(object instanceof Book book)) return false;
-        return this.id == book.getId();
+        return this.isbn == book.getIsbn();
     }
 
     @Override
     public int hashCode(){
-        return Objects.hash(id,title,year);
+        return Objects.hash(isbn,title,year);
     }
 
-
     @Override
-    public int compareTo(Object o) {
-        Book book=(Book) o;
+    public int compareTo(Book book) {
         return Integer.compare(this.year,book.getYear());
     }
 }

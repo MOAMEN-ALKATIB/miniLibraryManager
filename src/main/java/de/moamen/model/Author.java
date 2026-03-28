@@ -2,7 +2,7 @@ package de.moamen.model;
 
 import java.util.Objects;
 
-public class Author implements Comparable {
+public class Author implements Comparable<Author> {
     private static int counter = 0;
     private int id;
     private String name;
@@ -64,8 +64,7 @@ public class Author implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
-        Author author = (Author) o;
+    public int compareTo(Author author) {
         return this.name.compareTo(author.getName());
     }
 }
