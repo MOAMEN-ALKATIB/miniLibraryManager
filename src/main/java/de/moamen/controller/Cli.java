@@ -94,6 +94,8 @@ public class Cli {
     }
 
     private static Book createBook(){
+        System.out.print("book isbn:");
+        int isbn=getUserInput("",Integer.MIN_VALUE,Integer.MAX_VALUE);
         System.out.print("Book title:");
         String title=scanner.nextLine();
         System.out.print("Book year:");
@@ -104,8 +106,8 @@ public class Cli {
         String authorName=scanner.nextLine();
         for (Book book:bookList){
             if (book.getAuthor().getName().equalsIgnoreCase(authorName))
-                return new Book(title,year,book.getAuthor());
+                return new Book(isbn,title,year,book.getAuthor());
         }
-        return new Book(title,year,new Author(authorName));
+        return new Book(isbn,title,year,new Author(authorName));
     }
 }

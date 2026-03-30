@@ -1,8 +1,12 @@
 package de.moamen.model;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Author implements Comparable<Author> {
+public class Author implements Comparable<Author>, Serializable {
+    @Serial
+    private static final long serialVersionUID=213123194L;
     private static int counter = 0;
     private int id;
     private String name;
