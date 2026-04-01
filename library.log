@@ -1,0 +1,28 @@
+2026-04-01 21:23:00 [INFO] de.moamen.database.DataSourceImpl - Opening database connection
+2026-04-01 21:23:00 [INFO] de.moamen.database.DataSourceImpl - Database connection opened
+2026-04-01 21:23:00 [INFO] de.moamen.database.DataSourceImpl - Connection closed
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Opening database connection
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Database connection opened
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Searching book with isbn 1
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Book with isbn 1 found
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Connection closed
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Opening database connection
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Database connection opened
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Searching book with isbn 2
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Book with isbn 2 found
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Connection closed
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Opening database connection
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Database connection opened
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Searching book with isbn 3
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Book with isbn 3 found
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Connection closed
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Opening database connection
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Database connection opened
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Searching book with isbn 4
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Book with isbn 4 found
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Connection closed
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Opening database connection
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Database connection opened
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Searching book with isbn 5
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Book with isbn 5 found
+2026-04-01 21:23:46 [INFO] de.moamen.database.DataSourceImpl - Connection closed

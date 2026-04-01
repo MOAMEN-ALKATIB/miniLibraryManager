@@ -2,6 +2,8 @@ package de.moamen.database;
 
 import de.moamen.model.Author;
 import de.moamen.model.Book;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.sql.*;
@@ -26,10 +28,15 @@ public class DataSourceImpl implements DataSource {
     private PreparedStatement insertBook;
     private PreparedStatement findBook;
 
+    private static final Logger logger= LoggerFactory.getLogger(DataSourceImpl.class);
+
     @Override
     public boolean open() {
         try {
+            logger.info("Opening database connection");
             connection = DriverManager.getConnection(CONNECTIONS_STRING);
+            logger.info("Database connection opened");
+            logger.debug("Ensuring BOOK table exists");
             try (Statement stmt = connection.createStatement()) {
                 stmt.execute(
                         "CREATE TABLE IF NOT EXISTS BOOK (" +
@@ -44,7 +51,7 @@ public class DataSourceImpl implements DataSource {
             findBook = connection.prepareStatement(FIND_BOOK);
             return true;
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error opening database",e);
             return false;
         }
     }
@@ -60,17 +67,18 @@ public class DataSourceImpl implements DataSource {
             }
             if (connection != null) {
                 connection.close();
+                logger.info("Connection closed");
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error during closing the Connection",e);
         }
     }
 
     @Override
     public List<Book> bookQuery() {
         List<Book> bookList = new ArrayList<>();
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery("select * from " + TABLE_NAME);
+        logger.debug("Fetching all books");
+        try (Statement statement = connection.createStatement();ResultSet resultSet = statement.executeQuery("select * from " + TABLE_NAME)) {
             while (resultSet.next()) {
                 int isbn = resultSet.getInt(COLUMN_ISBN);
                 String title = resultSet.getString(COLUMN_TITLE);
@@ -78,8 +86,9 @@ public class DataSourceImpl implements DataSource {
                 String authorName = resultSet.getString(COLUMN_AUTHOR_NAME);
                 bookList.add(new Book(isbn, title, year, new Author(authorName)));
             }
+            logger.debug("Found {} books", bookList.size());
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error during fetching the books",e);
         }
         return bookList;
     }
@@ -92,26 +101,31 @@ public class DataSourceImpl implements DataSource {
             insertBook.setInt(3, book.getYear());
             insertBook.setString(4, book.getAuthor().getName());
             insertBook.executeUpdate();
+            logger.info("Book inserted: {} (isbn={})", book.getTitle(), book.getIsbn());
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error inserting book", e);
         }
     }
 
     @Override
     public Book findBook(int isbn) {
         try {
+            logger.info("Searching book with isbn {}", isbn);
             findBook.setInt(1, isbn);
-            ResultSet resultSet = findBook.executeQuery();
-            if (resultSet.next()) {
-                int is = resultSet.getInt(COLUMN_ISBN);
-                String title = resultSet.getString(COLUMN_TITLE);
-                int year = resultSet.getInt(COLUMN_YEAR);
-                String authorName = resultSet.getString(COLUMN_AUTHOR_NAME);
-                return new Book(is, title, year, new Author(authorName));
+            try(ResultSet resultSet = findBook.executeQuery()) {
+                if (resultSet.next()) {
+                    logger.info("Book with isbn {} found",isbn);
+                    return new Book(
+                            resultSet.getInt(COLUMN_ISBN),
+                            resultSet.getString(COLUMN_TITLE),
+                            resultSet.getInt(COLUMN_YEAR),
+                            new Author(resultSet.getString(COLUMN_AUTHOR_NAME))
+                    );
+                }
             }
-            resultSet.close();
+            logger.warn("Book with isbn {} not found",isbn);
         } catch (SQLException e) {
-            e.printStackTrace();
+            logger.error("Error searching book",e);
             return null;
         }
         return null;
