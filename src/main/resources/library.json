@@ -1,0 +1,19 @@
+[ {
+  "isbn" : 1,
+  "title" : "A1.1",
+  "year" : 2023,
+  "author" : {
+    "id" : 0,
+    "name" : "telc",
+    "bio" : null
+  }
+}, {
+  "isbn" : 2,
+  "title" : "A1.2",
+  "year" : 2024,
+  "author" : {
+    "id" : 0,
+    "name" : "telc",
+    "bio" : null
+  }
+} ]

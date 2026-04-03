@@ -1,22 +1,27 @@
 package de.moamen.model;
 
+import lombok.Data;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 public class Book implements Comparable<Book>, Serializable {
     @Serial
-    private static final long serialVersionUID=213123194L;
+    private static final long serialVersionUID = 213123194L;
     private int isbn;
     private String title;
     private int year;
     private Author author;
 
-    public Book(int isbn,String title, int year,Author author){
-        this.isbn=isbn;
-        this.title=title;
-        this.year=year;
-        this.author=author;
+    public Book() {
+    }
+
+    public Book(int isbn, String title, int year, Author author) {
+        this.isbn = isbn;
+        this.title = title;
+        this.year = year;
+        this.author = author;
     }
 
     public int getIsbn() {
@@ -62,19 +67,19 @@ public class Book implements Comparable<Book>, Serializable {
     }
 
     @Override
-    public boolean equals(Object object){
-        if (this==object) return true;
+    public boolean equals(Object object) {
+        if (this == object) return true;
         if (!(object instanceof Book book)) return false;
         return this.isbn == book.getIsbn();
     }
 
     @Override
-    public int hashCode(){
-        return Objects.hash(isbn,title,year);
+    public int hashCode() {
+        return Objects.hash(isbn, title, year);
     }
 
     @Override
     public int compareTo(Book book) {
-        return Integer.compare(this.year,book.getYear());
+        return Integer.compare(this.year, book.getYear());
     }
 }

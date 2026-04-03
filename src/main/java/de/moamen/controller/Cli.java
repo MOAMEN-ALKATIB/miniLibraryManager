@@ -30,7 +30,7 @@ public class Cli {
     }
 
     public static void cli() {
-        library.loadFromDatabase();
+        library.loadFromJsonFile();
         System.out.println(COMMANDS);
         int userInput = getUserInput("select an option between 1-9", 1, 9);
         while (userInput != 9) {
@@ -75,7 +75,7 @@ public class Cli {
             System.out.println(COMMANDS);
             userInput = getUserInput("select an option between 1-9", 1, 9);
         }
-        library.saveInDatabase();
+        library.saveAsJsonInFile();
     }
 
     private static int getUserInput(String message, int minValue, int maxValue) {

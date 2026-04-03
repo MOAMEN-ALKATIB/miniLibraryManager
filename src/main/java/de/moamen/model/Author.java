@@ -6,11 +6,14 @@ import java.util.Objects;
 
 public class Author implements Comparable<Author>, Serializable {
     @Serial
-    private static final long serialVersionUID=213123194L;
+    private static final long serialVersionUID = 213123194L;
     private static int counter = 0;
     private int id;
     private String name;
     private String bio;
+
+    public Author() {
+    }
 
     public Author(String name) {
         this.id = counter++;

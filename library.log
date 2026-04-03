@@ -44,3 +44,66 @@
 2026-04-03 16:55:01 [INFO] de.moamen.service.Library - Loaded 5 books from database
 2026-04-03 16:55:23 [DEBUG] de.moamen.service.Library - Attempting to add book Book{isbn=837437432, title='A1,1', year=2024, author=Author{id=5, name='telc', bio='null'}}
 2026-04-03 16:55:23 [INFO] de.moamen.service.Library - book added successfully: Book{isbn=837437432, title='A1,1', year=2024, author=Author{id=5, name='telc', bio='null'}}
+2026-04-03 17:48:41 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:48:41 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:48:41 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File C:\Users\alkat\OneDrive - FHDO - PROD\Desktop\referesher course\Mini Library Manager\miniLibraryManager\src\main\resources\library.json (Das System kann die angegebene Datei nicht finden)
+2026-04-03 17:50:07 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:50:07 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:50:07 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File C:\Users\alkat\OneDrive - FHDO - PROD\Desktop\referesher course\Mini Library Manager\miniLibraryManager\src\main\resources\library.json (Das System kann die angegebene Datei nicht finden)
+2026-04-03 17:50:07 [INFO] de.moamen.service.Library - Loaded 0 books from Json-file
+2026-04-03 17:50:29 [DEBUG] de.moamen.service.Library - Attempting to add book Book{isbn=983434, title='A1.1', year=2023, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:50:29 [INFO] de.moamen.service.Library - book added successfully: Book{isbn=983434, title='A1.1', year=2023, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:50:54 [DEBUG] de.moamen.service.Library - Attempting to add book Book{isbn=5432, title='A1.2', year=2025, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:50:54 [INFO] de.moamen.service.Library - book added successfully: Book{isbn=5432, title='A1.2', year=2025, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:51:02 [DEBUG] de.moamen.service.Library - Attempting to save books as json
+2026-04-03 17:51:02 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to save a book as Json in the file Book{isbn=983434, title='A1.1', year=2023, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:51:02 [INFO] de.moamen.json.BookToJsonImpl - book as Json saved Book{isbn=983434, title='A1.1', year=2023, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:51:02 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to save a book as Json in the file Book{isbn=5432, title='A1.2', year=2025, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:51:02 [INFO] de.moamen.json.BookToJsonImpl - book as Json saved Book{isbn=5432, title='A1.2', year=2025, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:51:34 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:51:34 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:51:34 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File Cannot deserialize value of type `java.util.ArrayList<de.moamen.model.Book>` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1]
+2026-04-03 17:51:34 [INFO] de.moamen.service.Library - Loaded 0 books from Json-file
+2026-04-03 17:52:44 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:52:44 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:52:44 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File Cannot deserialize value of type `java.util.ArrayList<de.moamen.model.Book>` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1]
+2026-04-03 17:52:44 [INFO] de.moamen.service.Library - Loaded 0 books from Json-file
+2026-04-03 17:56:11 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:56:11 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:56:11 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File Cannot deserialize value of type `java.util.ArrayList<de.moamen.model.Book>` from Object value (token `JsonToken.START_OBJECT`)
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1, column: 1]
+2026-04-03 17:56:11 [INFO] de.moamen.service.Library - Loaded 0 books from Json-file
+2026-04-03 17:56:27 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:56:27 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:56:27 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File C:\Users\alkat\OneDrive - FHDO - PROD\Desktop\referesher course\Mini Library Manager\miniLibraryManager\src\main\resources\library.json (Das System kann die angegebene Datei nicht finden)
+2026-04-03 17:56:27 [INFO] de.moamen.service.Library - Loaded 0 books from Json-file
+2026-04-03 17:56:49 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:56:49 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:56:49 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File No content to map due to end-of-input
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1]
+2026-04-03 17:56:49 [INFO] de.moamen.service.Library - Loaded 0 books from Json-file
+2026-04-03 17:57:22 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:57:22 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:57:22 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File No content to map due to end-of-input
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1]
+2026-04-03 17:57:22 [INFO] de.moamen.service.Library - Loaded 0 books from Json-file
+2026-04-03 17:57:34 [DEBUG] de.moamen.service.Library - Attempting to add book Book{isbn=1, title='A1.1', year=2023, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:57:34 [INFO] de.moamen.service.Library - book added successfully: Book{isbn=1, title='A1.1', year=2023, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:57:45 [DEBUG] de.moamen.service.Library - Attempting to add book Book{isbn=2, title='A1.2', year=2024, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:57:45 [INFO] de.moamen.service.Library - book added successfully: Book{isbn=2, title='A1.2', year=2024, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:57:50 [DEBUG] de.moamen.service.Library - Attempting to save books as json
+2026-04-03 17:57:50 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to save a book as Json in the file Book{isbn=1, title='A1.1', year=2023, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:57:50 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:57:50 [ERROR] de.moamen.json.BookToJsonImpl - error during reading the json from the File No content to map due to end-of-input
+ at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); line: 1]
+2026-04-03 17:57:50 [INFO] de.moamen.json.BookToJsonImpl - Book saved as JSON: Book{isbn=1, title='A1.1', year=2023, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:57:50 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to save a book as Json in the file Book{isbn=2, title='A1.2', year=2024, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:57:50 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:57:50 [INFO] de.moamen.json.BookToJsonImpl - 1 loaded from the json-file
+2026-04-03 17:57:50 [INFO] de.moamen.json.BookToJsonImpl - Book saved as JSON: Book{isbn=2, title='A1.2', year=2024, author=Author{id=0, name='telc', bio='null'}}
+2026-04-03 17:58:02 [DEBUG] de.moamen.service.Library - Attempting to load books from the json-file
+2026-04-03 17:58:02 [DEBUG] de.moamen.json.BookToJsonImpl - Attempting to load books from the json-file
+2026-04-03 17:58:02 [INFO] de.moamen.json.BookToJsonImpl - 2 loaded from the json-file
+2026-04-03 17:58:02 [INFO] de.moamen.service.Library - Loaded 2 books from Json-file
