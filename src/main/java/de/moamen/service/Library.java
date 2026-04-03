@@ -1,12 +1,17 @@
 package de.moamen.service;
 
+import de.moamen.exceptions.LoadingFailedException;
+import de.moamen.exceptions.NoBookFoundException;
+import de.moamen.io.IOImpl;
+import de.moamen.io.IOInterface;
 import de.moamen.model.Book;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
-    private final List<Book> bookList;
+    private static final IOInterface io=new IOImpl();
+    private List<Book> bookList;
 
     public Library(){
         this.bookList=new ArrayList<>();
@@ -54,6 +59,22 @@ public class Library {
     public void displayALlBooks(){
         for (Book book:bookList){
             System.out.println(book);
+        }
+    }
+
+    public void saveBooksInFiles(){
+        if (!bookList.isEmpty()){
+            for (Book book: bookList){
+                io.save(book);
+            }
+        }
+    }
+
+    public void loadBooksFromFiles(){
+        try {
+            bookList=io.load();
+        }catch (NoBookFoundException | LoadingFailedException e){
+            System.out.println(e.getMessage());
         }
     }
 
