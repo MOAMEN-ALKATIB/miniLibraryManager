@@ -61,26 +61,15 @@ public class Library {
         return bookList.stream().filter(book -> book.getTitle() != null && title.equalsIgnoreCase(book.getTitle())).findFirst().orElse(null);
     }
 
-    public void displayAuthorBooks(String authorName) {
-        for (Book book : bookList) {
-            if (book.getAuthor().getName().equalsIgnoreCase(authorName)) {
-                System.out.println(book);
-            }
-        }
-    }
-
-    public void displayALlBooks() {
-        for (Book book : bookList) {
-            System.out.println(book);
-        }
+    public List<Book> findBooksByAuthor(String authorName) {
+        logger.debug("Searching for the Author {} books", authorName);
+        return bookList.stream()
+                .filter(book -> book.getAuthor().getName().equalsIgnoreCase(authorName))
+                .toList();
     }
 
     public List<Book> getBookList() {
         return bookList;
-    }
-
-    public void setBookList(List<Book> bookList) {
-        this.bookList = bookList;
     }
 
     public void saveAsJsonInFile() {

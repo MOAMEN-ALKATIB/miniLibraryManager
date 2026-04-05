@@ -32,7 +32,7 @@ public class BookToJsonImpl implements BookToJson {
     public List<Book> loadBooksAsJsonFromFile() {
         logger.debug("Attempting to load books from the json-file");
         try (Reader reader = new FileReader(BASIS_FILE)) {
-            List<Book> bookList = objectMapper.readValue(reader, new TypeReference<List<Book>>() {
+            List<Book> bookList = objectMapper.readValue(reader, new TypeReference<>() {
             });
             logger.info("{} loaded from the json-file", bookList.size());
             return bookList;

@@ -61,11 +61,17 @@ public class Cli {
                         System.out.println("there is no book with the given isbn");
                     }
                 }
-                case 5 -> library.displayALlBooks();
+                case 5 -> {
+                    for (Book book:library.getBookList()){
+                        System.out.println(book);
+                    }
+                }
                 case 6 -> {
                     System.out.print("author name:");
                     String authorName = scanner.nextLine();
-                    library.displayAuthorBooks(authorName);
+                    for (Book book:library.findBooksByAuthor(authorName)){
+                        System.out.println(book);
+                    }
                 }
                 case 7 -> Collections.sort(library.getBookList());
                 case 8 -> library.getBookList().sort(Comparator.comparing(Book::getTitle));
