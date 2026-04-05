@@ -28,6 +28,8 @@ This project was created to practice and demonstrate:
 - Find Book by Title
 - Display all books
 - Display books by author
+- sort books by year
+- sort books by their titles
 
 ### 2. Database Integration (SQLite via JDBC)
 - Custom DataSource implementation
