@@ -1,9 +1,18 @@
 package de.moamen.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
+@Setter
+@XmlRootElement(name = "book")
+@XmlType(propOrder = {"isbn", "title", "year", "author"})
 public class Book implements Comparable<Book>, Serializable {
     @Serial
     private static final long serialVersionUID=213123194L;
@@ -12,43 +21,13 @@ public class Book implements Comparable<Book>, Serializable {
     private int year;
     private Author author;
 
+    public Book() {}
+
     public Book(int isbn,String title, int year,Author author){
         this.isbn=isbn;
         this.title=title;
         this.year=year;
         this.author=author;
-    }
-
-    public int getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(int isbn) {
-        this.isbn = isbn;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
     }
 
     @Override

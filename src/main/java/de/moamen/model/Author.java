@@ -1,9 +1,16 @@
 package de.moamen.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import javax.xml.bind.annotation.XmlType;
+
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Getter
+@Setter
+@XmlType(propOrder = {"id", "name", "bio"})
 public class Author implements Comparable<Author>, Serializable {
     @Serial
     private static final long serialVersionUID=213123194L;
@@ -11,6 +18,7 @@ public class Author implements Comparable<Author>, Serializable {
     private int id;
     private String name;
     private String bio;
+    public Author() {}
 
     public Author(String name) {
         this.id = counter++;
@@ -21,31 +29,6 @@ public class Author implements Comparable<Author>, Serializable {
         this(name);
         this.bio = bio;
     }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getBio() {
-        return bio;
-    }
-
-    public void setBio(String bio) {
-        this.bio = bio;
-    }
-
     @Override
     public String toString() {
         return "Author{" +
