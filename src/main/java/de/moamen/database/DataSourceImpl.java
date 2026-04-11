@@ -22,11 +22,13 @@ public class DataSourceImpl implements DataSource {
 
     private static final String INSERT_BOOK = "insert into " + TABLE_NAME + "(" + COLUMN_ISBN + "," + COLUMN_TITLE + "," + COLUMN_YEAR + "," + COLUMN_AUTHOR_NAME + ") values(?,?,?,?)";
     private static final String FIND_BOOK = "select * from " + TABLE_NAME + " where isbn=?";
+    private static final String DELETE_BOOK = "delete from " + TABLE_NAME + " where isbn=?";
 
 
     private Connection connection;
     private PreparedStatement insertBook;
     private PreparedStatement findBook;
+    private PreparedStatement deleteBook;
 
     private static final Logger logger= LoggerFactory.getLogger(DataSourceImpl.class);
 
@@ -49,6 +51,7 @@ public class DataSourceImpl implements DataSource {
             }
             insertBook = connection.prepareStatement(INSERT_BOOK);
             findBook = connection.prepareStatement(FIND_BOOK);
+            deleteBook= connection.prepareStatement(DELETE_BOOK);
             return true;
         } catch (SQLException e) {
             logger.error("Error opening database",e);
@@ -64,6 +67,9 @@ public class DataSourceImpl implements DataSource {
             }
             if (findBook != null) {
                 findBook.close();
+            }
+            if (deleteBook != null){
+                deleteBook.close();
             }
             if (connection != null) {
                 connection.close();
@@ -104,6 +110,16 @@ public class DataSourceImpl implements DataSource {
             logger.info("Book inserted: {} (isbn={})", book.getTitle(), book.getIsbn());
         } catch (SQLException e) {
             logger.error("Error inserting book", e);
+        }
+    }
+    @Override
+    public void deleteBook(int isbn) {
+        try {
+            deleteBook.setInt(1,isbn);
+            deleteBook.executeUpdate();
+            logger.info("Book deleted successfully");
+        }catch (SQLException e){
+            logger.error("Error deleting book",e);
         }
     }
 

@@ -1,0 +1,228 @@
+form {
+    text-align: center;
+    margin-top: 2em;
+}
+
+.button {
+    background-color: #000000;
+    line-height: 40px;
+    font-size: 2em;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 10px
+}
+
+header {
+    grid-area: header;
+    margin-bottom: 2%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+#messageContainer {
+    line-height: 40px;
+    font-size: 2em;
+    margin-top: 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    position: fixed;
+    grid-area: footer;
+    height: 10%;
+    width: 100%;
+    background-color: #333333;
+    bottom: 0px;
+}
+
+p.copyright {
+    width: 100%;
+    color: #fff;
+    line-height: 40px;
+    font-size: 0.7em;
+    text-align: center;
+}
+
+p.title {
+    padding: 1.5%;
+    text-shadow: 1px 1px;
+    color: #fff;
+    line-height: 40px;
+    font-size: 1em;
+    text-align: center;
+    vertical-align: top;
+    font-style: italic;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 1px 1px black;
+    background-color: #333333;
+}
+
+#GridContainer {
+    display: grid;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer';
+}
+
+main {
+    grid-area: main;
+}
+
+
+/*createorLoad*/
+#create {
+    grid-area: create;
+}
+
+#load {
+    margin: 2em;
+    gird-area: load;
+}
+
+#createLoad {
+    margin-top: 4em;
+    display: grid;
+    row-gap: 30%;
+    grid-template-areas:
+        'create load';
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.aktion {
+    background-color: #000000;
+    font-size: 1.5em;
+    text-shadow: 1px 1px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    vertical-align: top;
+    font-style: italic;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    margin: 10px
+}
+
+#emoji {
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.face {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 30%;
+    background: rgb(221, 199, 33);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#mouse {
+    position: absolute;
+    top: 110px;
+    left: 35px;
+    width: 150px;
+    height: 70px;
+    background: rgb(124, 102, 12);
+    border-bottom-left-radius: 70px;
+    border-bottom-right-radius: 70px;
+    transition: 0.5s;
+}
+
+.eyes {
+    position: relative;
+    top: -40px;
+    display: flex;
+}
+
+.eyes .eye {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: block;
+    background: #fff;
+    margin: 0 15px;
+    border-radius: 500%;
+}
+
+.eyeblack {
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: #333;
+    border-radius: 50%;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.progressBar {
+    background-color: tomato;
+    border-radius: 5px;
+    text-align: center;
+    vertical-align: baseline;
+    padding: 1em;
+    width: 100%;
+}
+
+.Attribut {
+    padding-left: 1em;
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+#values {
+    display: flex;
+    justify-content: space-around;
+}
+
+.f {
+    margin: 20%;
+}
+
+#nameAndAttributs {
+    display: flex;
+    flex-direction: column;
+}
+
+#javagotchiname {
+    line-height: 40px;
+    font-size: 1em;
+    text-align: center;
+    vertical-align: top;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.TowButtons {
+    display: flex;
+    flex-direction: row;
+}

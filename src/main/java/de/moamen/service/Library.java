@@ -17,7 +17,7 @@ import java.util.List;
 
 public class Library {
 
-    private List<Book> bookList;
+    private static List<Book> bookList;
     private static final IOInterface io = new IOImpl();
     private static final BookToJson bookToJson = new BookToJsonImpl();
     private static final BookToDatabaseConnector bookToDatabaseConnector = new BookToDatabaseConnectorImpl();
@@ -25,7 +25,7 @@ public class Library {
     private static final Logger logger = LoggerFactory.getLogger(Library.class);
 
     public Library() {
-        this.bookList = new ArrayList<>();
+        bookList = new ArrayList<>();
     }
 
     public void addBook(Book book) {
@@ -95,7 +95,7 @@ public class Library {
         logger.info("Loaded {} books from Json-file", bookList.size());
     }
 
-    public void saveInDatabase() {
+    public static void saveInDatabase() {
         logger.debug("Saving {} books to database", bookList.size());
         for (Book b :
                 bookList) {
@@ -104,7 +104,7 @@ public class Library {
         logger.info("Successfully saved {} books to database", bookList.size());
     }
 
-    public void loadFromDatabase() {
+    public static void loadFromDatabase() {
         logger.debug("Loading books from database");
         bookList = bookToDatabaseConnector.loadBook();
         logger.info("Loaded {} books from database", bookList.size());

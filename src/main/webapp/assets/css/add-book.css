@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align:center;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px black;
+    background: #4a90e2;
+    color: white;
+    padding: 20px;
+}
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74,144,226,0.4);
+}
+
+#createInputSubmit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#createbutton {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+#createbutton:hover {
+    background: #357ab7;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: right;
+    padding: 10px 20px;
+}
