@@ -11,9 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DataSourceImpl implements DataSource {
-    private static final String DN_NAME = "library.db";
-    private static final String CONNECTIONS_STRING = "jdbc:sqlite:" + new File("").getAbsolutePath() + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + DN_NAME;
-
     private static final String TABLE_NAME = "BOOK";
     private static final String COLUMN_ISBN = "isbn";
     private static final String COLUMN_TITLE = "title";
@@ -34,8 +31,14 @@ public class DataSourceImpl implements DataSource {
 
     @Override
     public boolean open() {
+        File dbFile= new File(System.getProperty("user.home")
+                + File.separator + "miniLibrary"
+                + File.separator + "library.db");
+        dbFile.getParentFile().mkdirs();
+        final String CONNECTIONS_STRING = "jdbc:sqlite:" + dbFile.getAbsolutePath();
         try {
             logger.info("Opening database connection");
+            Class.forName("org.sqlite.JDBC");
             connection = DriverManager.getConnection(CONNECTIONS_STRING);
             logger.info("Database connection opened");
             logger.debug("Ensuring BOOK table exists");
@@ -53,7 +56,7 @@ public class DataSourceImpl implements DataSource {
             findBook = connection.prepareStatement(FIND_BOOK);
             deleteBook= connection.prepareStatement(DELETE_BOOK);
             return true;
-        } catch (SQLException e) {
+        } catch (SQLException |ClassNotFoundException e) {
             logger.error("Error opening database",e);
             return false;
         }

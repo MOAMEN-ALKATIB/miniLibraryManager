@@ -3,16 +3,12 @@ package de.moamen.model;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 import java.io.Serial;
 import java.io.Serializable;
 import java.util.Objects;
 
 @Getter
 @Setter
-@XmlRootElement(name = "book")
-@XmlType(propOrder = {"isbn", "title", "year", "author"})
 public class Book implements Comparable<Book>, Serializable {
     @Serial
     private static final long serialVersionUID=213123194L;

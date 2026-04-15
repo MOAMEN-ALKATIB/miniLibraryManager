@@ -2,7 +2,6 @@ package de.moamen.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import javax.xml.bind.annotation.XmlType;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -10,7 +9,6 @@ import java.util.Objects;
 
 @Getter
 @Setter
-@XmlType(propOrder = {"id", "name", "bio"})
 public class Author implements Comparable<Author>, Serializable {
     @Serial
     private static final long serialVersionUID=213123194L;

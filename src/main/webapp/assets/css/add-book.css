@@ -67,18 +67,18 @@ input:focus {
     justify-content: center;
 }
 
-#createbutton {
+#createButton {
     background: #4a90e2;
     color: white;
     border: none;
-    padding: 10px 25px;
+    padding: 20px 40px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
     transition: 0.3s;
 }
 
-#createbutton:hover {
+#createButton:hover {
     background: #357ab7;
 }
 
