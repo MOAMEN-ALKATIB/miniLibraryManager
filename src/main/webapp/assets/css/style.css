@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px black;
+    background: #4a90e2;
+    color: white;
+    padding: 20px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#main {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 400px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 6px rgba(74, 144, 226, 0.4);
+}
+
+#createInputSubmit {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#createButton,
+#searchButton {
+    background: #4a90e2;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+#createButton:hover {
+    background: #357ab7;
+}
+
+#searchButton:hover {
+    background: #357ab7;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 10%;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* find-----.html spec */
+#SearchButtonDiv {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* books.html spec */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+    text-align: left;
+    padding: 12px;
+    font-size: 16px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+    transition: 0.3s;
+}
+
+tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* index.html spec */
+#projectIdea {
+    margin: 2em;
+    padding: 2em;
+    border: 2px solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+}
+
+#features {
+    display: flex;
+    flex-direction: column;
+    font-size: 2em;
+}
+
+#features ul {
+    margin-left: 3em;
+}

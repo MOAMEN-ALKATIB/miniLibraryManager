@@ -25,5 +25,5 @@ document.addEventListener("DOMContentLoaded", function() {
 function deleteBook(isbn) {
     fetch("http://localhost:8080/miniLibraryManager/api/books/" + isbn, {
         method: "DELETE"
-    }).then(() => loadBooks());
+    }).then(() => window.location.reload());
 }

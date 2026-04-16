@@ -11,7 +11,7 @@ createButton.addEventListener("click", function () {
         }
     };
 
-    fetch('http://localhost:8080/miniLibraryManager/api/connection/insert', {
+    fetch('http://localhost:8080/miniLibraryManager/api/books/insert', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
