@@ -1,7 +1,6 @@
 let createButton = document.getElementById("createButton");
 
 createButton.addEventListener("click", function () {
-
     let book = {
         isbn: document.getElementById("isbn").value,
         title: document.getElementById("title").value,
@@ -20,13 +19,13 @@ createButton.addEventListener("click", function () {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error("Error while adding book");
+            window.location.href = "error.html";
         }
         window.location.href = "books.html";
     })
     .catch(error => {
         console.error(error);
-        alert("Failed to add book");
+        window.location.href = "error.html";
     });
 
 });

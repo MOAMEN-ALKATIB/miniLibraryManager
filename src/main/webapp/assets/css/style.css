@@ -1,3 +1,5 @@
+/*global*/
+
 * {
     margin: 0;
     padding: 0;
@@ -22,11 +24,40 @@ header {
     padding: 20px;
 }
 
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #2c3e50;
+    padding: 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    background: #4a90e2;
+}
+
 main {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+footer {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: right;
+    margin-top: auto;
 }
 
 #main {
@@ -62,14 +93,14 @@ input:focus {
     box-shadow: 0 0 6px rgba(74, 144, 226, 0.4);
 }
 
-#createInputSubmit {
+#createButtonDiv {
     margin-top: 20px;
     display: flex;
     justify-content: center;
 }
 
 #createButton,
-#searchButton {
+#searchButton, #selectButton {
     background: #4a90e2;
     color: white;
     border: none;
@@ -86,17 +117,6 @@ input:focus {
 
 #searchButton:hover {
     background: #357ab7;
-}
-
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 10%;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 /* find-----.html spec */
@@ -140,23 +160,77 @@ tr:nth-child(even) {
     background-color: #fafafa;
 }
 
-/* index.html spec */
-#projectIdea {
-    margin: 2em;
-    padding: 2em;
-    border: 2px solid;
-    border-radius: 15px;
+#selectDiv{
     display: flex;
     flex-direction: column;
-    font-size: 2em;
+    margin: 4%;
 }
 
-#features {
+#selectDiv select{
+    font-size: 1em;
+    text-align: left;
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-top: 10%;
+}
+
+#selectDiv label{
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#selectButtonDiv {
+    margin-top: 20px;
     display: flex;
-    flex-direction: column;
-    font-size: 2em;
+    justify-content: center;
+}
+
+#sortDiv{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#sortByYearButton, #sortByTitleButton{
+    margin-top: 0.4%;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+/* index.html spec */
+#projectIdea, #features {
+    max-width: 1200px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 #features ul {
-    margin-left: 3em;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
 }
+
+#features li {
+    background: #f4f6f8;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+#features li:hover {
+    background: #e0e6ed;
+    transform: scale(1.03);
+}
+

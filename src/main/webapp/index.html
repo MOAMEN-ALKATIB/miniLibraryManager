@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Library Dashboard</title>
@@ -10,7 +10,14 @@
 <header>
     <h1 id="pageTitle">Library System</h1>
 </header>
-
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="add-book.html">Add</a>
+    <a href="books.html">Books</a>
+    <a href="searchForBook.html">Search</a>
+</nav>
+<main>
+    <div>
     <article id="projectIdea">
     <p>
         <span style="font-size:1.3em;font-weight:bold">Project Idea: </span>This project is a simple <b>Library Management System</b> built using Java REST API.
@@ -23,17 +30,18 @@
  <div id="features">
         <h2>⚙️ Features</h2>
         <ul>
-            <li><a href="add-book.html">➕ Add Book</a></li>
-            <li><a href="books.html">❌ Delete Book</a></li>
-            <li><a href="find-book-by-isbn.html">🔍 Find Book by ISBN</a> </li>
-            <li><a href="find-book-by-title.html">🔎 Find Book by Title</a> </li>
-            <li><a href="books.html">📚 Display All Books</a></li>
-            <li><a href="find-books-by-author.html">👤 Display Books by Author</a></li>
+            <li>➕ Add Book</li>
+            <li>❌ Delete Book</li>
+            <li>🔍 search for book using ISBN </li>
+            <li>🔎 search for book using title</li>
+            <li>👤 search for book using author</li>
+            <li>📚 Display All Books</li>
             <li>📊 Sort Books by Year</li>
             <li>🔤 Sort Books by Title</li>
         </ul>
  </div>
-
+    </div>
+</main>
 <footer>
     <p class="copyright">&copy; Moamen Alkatib</p>
 </footer>

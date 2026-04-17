@@ -1,73 +1,122 @@
-# Java Library Management System
+## 🌐 REST API - Mini Library Manager
 
-A simple **Library Management System** built using **pure Java (no Spring)** to practice core backend concepts such as OOP, JDBC, JSON processing, logging, and clean architecture.
-
----
-
-## 🚀 Project Goals
-
-This project was created to practice and demonstrate:
-
-- Object-Oriented Programming (OOP)
-- Clean Architecture
-- JDBC Database Integration
-- JSON Serialization / Deserialization
-- Logging
-- File I/O
-- Generics
-- Modular Project Structure
+This branch contains the implementation of a **RESTful API** for the Mini Library Manager project using **Jakarta EE (JAX-RS)**.
 
 ---
 
-## 🧩 Features Implemented
+### 🚀 Features
 
-### 1. Core Library Management
-- Add Book
-- Delete Book
-- Find Book by ISBN
-- Find Book by Title
-- Display all books
-- Display books by author
-- sort books by year
-- sort books by their titles
+* 📚 Manage books (Create, Read, Delete)
+* 🔍 Search books by:
 
-### 2. Database Integration (SQLite via JDBC)
-- Custom DataSource implementation
-- Automatic table creation (`CREATE TABLE IF NOT EXISTS`)
-- Insert book into database
-- Find book from database
-- Query multiple books
-- JDBC connection handling
+    * ISBN
+    * Title
+    * Author
+* 📊 Sort books by:
 
-### 3. Logging
-Implemented using:
-
-- SLF4J
-- Log4j2
-
-Logging added to:
-
-- Library service
-- Database connector
-- DataSource implementation
-- JSON converter
-
-Log Levels used:
-
-- DEBUG
-- INFO
-- WARN
-- ERROR
+    * Year
+    * Title
+* 🗄️ SQLite database integration (JDBC)
+* 🔄 JSON-based communication
 
 ---
 
-### 4. JSON Support
-Implemented using:
+### 🛠️ Technologies Used
 
-- Jackson
+* Java 17
+* Jakarta EE (JAX-RS / Jersey)
+* Maven
+* SQLite (JDBC)
+* JSON (Jackson)
 
-Generic JSON converter:
+---
 
-```java
-<T> String toJson(T obj)
-<T> T fromJson(String json, Class<T> clazz)
+### 📡 API Endpoints
+
+#### 📘 Get all books
+
+```
+GET /api/books/all
+```
+
+#### ➕ Insert book
+
+```
+POST /api/books/insert
+```
+
+#### ❌ Delete book
+
+```
+DELETE /api/books/{isbn}
+```
+
+#### 🔍 Get book by ISBN
+
+```
+GET /api/books/{isbn}
+```
+
+#### 🔎 Search by title
+
+```
+GET /api/books/search?title=...
+```
+
+#### 👤 Search by author
+
+```
+GET /api/books/author?authorName=...
+```
+
+#### 📊 Sort by year
+
+```
+GET /api/books/sort/year
+```
+
+#### 🔤 Sort by title
+
+```
+GET /api/books/sort/title
+```
+
+---
+
+### ▶️ How to Run
+
+1. Build the project:
+
+```
+mvn clean package
+```
+
+2. Run with Tomcat (via Cargo):
+
+```
+mvn cargo:run
+```
+
+3. Open in browser:
+
+```
+http://localhost:8080/miniLibraryManager/
+```
+
+---
+
+### ⚠️ Notes
+
+* API responses are in JSON format.
+* Error handling is implemented using HTTP status codes (e.g., 404 for not found).
+
+---
+
+### 📌 Purpose
+
+This branch focuses on practicing:
+
+* REST API design
+* Backend development with Java
+* Database integration
+* Clean architecture principles

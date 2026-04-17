@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Search for Book</title>
+  <link style="text/css" rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header>
+  <h1>search for book</h1>
+</header>
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="add-book.html">Add</a>
+  <a href="books.html">Books</a>
+  <a href="searchForBook.html">Search</a>
+</nav>
+<main>
+  <div id="main">
+    <form>
+      <div id="selectDiv">
+        <label for="search">search for book using:</label>
+        <select name="search" id="search">
+          <option value="ISBN">ISBN</option>
+          <option value="TITLE">Title</option>
+          <option value="AUTHOR">Author</option>
+        </select>
+      </div>
+      <div id="selectButtonDiv">
+        <button type="button" id="selectButton">select</button>
+      </div>
+    </form>
+  </div>
+</main>
+<footer>
+  <p class="copyright">&copy; Moamen Alkatib</p>
+</footer>
+<script type="text/javascript" src="assets/js/searchForBook.js"></script>
+
+</body>
+</html>
