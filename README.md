@@ -1,73 +1,36 @@
-# Java Library Management System
+# 🧪 Unit Testing – Library Manager
 
-A simple **Library Management System** built using **pure Java (no Spring)** to practice core backend concepts such as OOP, JDBC, JSON processing, logging, and clean architecture.
-
----
-
-## 🚀 Project Goals
-
-This project was created to practice and demonstrate:
-
-- Object-Oriented Programming (OOP)
-- Clean Architecture
-- JDBC Database Integration
-- JSON Serialization / Deserialization
-- Logging
-- File I/O
-- Generics
-- Modular Project Structure
+## 📌 Overview
+This part of the project is responsible for testing the core logic of the Library system using **JUnit 5**.  
+It ensures that all functionalities work correctly before using them in the REST API.
 
 ---
 
-## 🧩 Features Implemented
+## ⚙️ Tools Used
+- Java
+- JUnit 5
+- Parameterized Tests (ValueSource, MethodSource)
 
-### 1. Core Library Management
+---
+
+## 🧩 What is tested?
+
 - Add Book
 - Delete Book
 - Find Book by ISBN
-- Find Book by Title
-- Display all books
-- Display books by author
-- sort books by year
-- sort books by their titles
-
-### 2. Database Integration (SQLite via JDBC)
-- Custom DataSource implementation
-- Automatic table creation (`CREATE TABLE IF NOT EXISTS`)
-- Insert book into database
-- Find book from database
-- Query multiple books
-- JDBC connection handling
-
-### 3. Logging
-Implemented using:
-
-- SLF4J
-- Log4j2
-
-Logging added to:
-
-- Library service
-- Database connector
-- DataSource implementation
-- JSON converter
-
-Log Levels used:
-
-- DEBUG
-- INFO
-- WARN
-- ERROR
+- Find Book by Title (case-insensitive)
+- Find Books by Author
 
 ---
 
-### 4. JSON Support
-Implemented using:
+## 🧪 Example Tests
 
-- Jackson
-
-Generic JSON converter:
-
+### ✔ Add Book Test
 ```java
-<T> String toJson(T obj)
-<T> T fromJson(String json, Class<T> clazz)
+@Test
+void testAddBook() {
+    Library library = new Library();
+    library.addBook(new Book(1, "Java", 2020, new Author("Moamen")));
+
+    assertEquals(1, library.getBookList().size());
+}

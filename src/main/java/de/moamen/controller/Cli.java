@@ -97,6 +97,7 @@ public class Cli {
                 }
             } else {
                 System.out.println("you have to enter a number only!!!");
+                scanner.nextLine();
             }
         }
         return userInput;
